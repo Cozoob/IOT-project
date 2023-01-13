@@ -18,6 +18,7 @@ class Sensor(ABC):
         self.broker = broker
         self.client = self.__connect_mqtt()
 
+
     def __connect_mqtt(self) -> mqtt_client:
         def on_connect(client_id: mqtt_client, userdata, flags, rc: int):
             if rc == 0:
@@ -26,6 +27,7 @@ class Sensor(ABC):
                 print("Failed to connect, return code %d\n", rc)
 
         client = mqtt_client.Client(client_id=self.client_id)
+        client.username_pw_set("streamsheets", "QHtUEL0rCn")
         client.on_connect = on_connect
         client.connect(self.broker, self.port)
 
@@ -77,7 +79,7 @@ class GasValveSensor(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["open"] == "False":
+                if m["open"] == False:
                     self.is_open = False
                 else:
                     self.is_open = True
