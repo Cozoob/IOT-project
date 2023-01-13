@@ -249,11 +249,7 @@ class Light(Sensor):
 
     def publish(self, data: str):
         self.subscribe(self.client)
-        # self.subscribe_temperature()
-        # self.subscribe_brightness()
         self.client.loop_start()
-        # self.client2.loop_start()
-        # self.client3.loop_start()
 
         while True:
             random_data = self._get_random_data()
