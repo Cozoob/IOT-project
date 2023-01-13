@@ -7,11 +7,11 @@ import time
 from Sensors import sensor, sensor_scripts
 import signal
 
-NAME = "sensor-"
+NAME = "cedalo/sensor-"
 COUNTER = 0
 
 BROKER = "127.0.0.1"
-PORT = 8080
+PORT = 1883
 
 CHILDREN = []
 
@@ -31,8 +31,9 @@ def signal_handler(signum, frame):
 
 def create_subprocess(class_name: str):
     global COUNTER
+    # python3 for linux, python for windows
     p = subprocess.Popen(
-        ["python3", file] + [BROKER, str(PORT), NAME, str(COUNTER), class_name, NAME],
+        ["python", file] + [BROKER, str(PORT), NAME, str(COUNTER), class_name, NAME],
         env=process_env,
     )
     print("Sensor child's pid: ", p.pid, " | Sensor type: ", class_name)
@@ -62,19 +63,18 @@ if __name__ == "__main__":
 
     time.sleep(1)
 
-    file = os.path.join(os.getcwd(), "sensor.py")
+    file = os.path.join(os.getcwd(), r"Sensors\sensor.py")
     process_env = os.environ.copy()
 
-    create_subprocess(sensor_scripts.GasValveSensor.__name__)
-    create_subprocess(sensor_scripts.SmartPlug.__name__)
-    create_subprocess(sensor_scripts.Lock.__name__)
-    create_subprocess(sensor_scripts.GasDetector.__name__)
-    create_subprocess(sensor_scripts.Light.__name__)
-    create_subprocess(sensor_scripts.TemperatureSensor.__name__)
-    create_subprocess(sensor_scripts.HumidSensor.__name__)
-    create_subprocess(sensor_scripts.RollerShade.__name__)
+    # create_subprocess(sensor_scripts.GasValveSensor.__name__)
+    # create_subprocess(sensor_scripts.SmartPlug.__name__)
+    # create_subprocess(sensor_scripts.Lock.__name__)
+    # create_subprocess(sensor_scripts.GasDetector.__name__)
+    # create_subprocess(sensor_scripts.Light.__name__)
+    # create_subprocess(sensor_scripts.TemperatureSensor.__name__)
+    # create_subprocess(sensor_scripts.HumidSensor.__name__)
+    # create_subprocess(sensor_scripts.RollerShade.__name__)
     create_subprocess(sensor_scripts.GarageDoor.__name__)
-    create_subprocess(sensor_scripts.RollerShade.__name__)
 
     while True:
         pass

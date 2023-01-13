@@ -22,7 +22,7 @@ class MQTTConnector:
         self.port = port
 
     def publish(self, topic: str, data: typing.Any):
-        # example of the actual topic: sensor-0/open
+        # example of the actual topic: /sensor-0
         self.client.loop_start()
         self.client.publish(self.__get_actual_topic(topic), data)
 
