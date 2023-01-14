@@ -78,7 +78,7 @@ class GasValveSensor(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["open"] == False:
+                if not m["open"]:
                     self.is_open = False
                 else:
                     self.is_open = True
@@ -133,7 +133,7 @@ class SmartPlug(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["turn_on"] == "False":
+                if not m["turn_on"]:
                     self.is_turn_on = False
                 else:
                     self.is_turn_on = True
@@ -188,7 +188,7 @@ class Lock(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["open"] == "False":
+                if not m["open"]:
                     self.open = False
                 else:
                     self.open = True
@@ -279,7 +279,7 @@ class Light(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["turn_on"] == "False":
+                if not m["turn_on"]:
                     self.is_turn_on = False
                 else:
                     self.is_turn_on = True
@@ -397,10 +397,10 @@ class RollerShade(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["open"] == "False":
+                if not m["open"]:
                     self.is_open = False
                     self.open_value = 0
-                elif m["open"] == "True":
+                elif m["open"]:
                     self.open = True
 
                 if m["open_value"]:
@@ -450,7 +450,7 @@ class GarageDoor(Sensor):
             print(f"Received `{m}` from `{msg.topic}` topic")
 
             try:
-                if m["open"] == "False":
+                if not m["open"]:
                     self.is_open = False
                 else:
                     self.is_open = True
