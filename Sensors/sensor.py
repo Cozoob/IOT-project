@@ -18,6 +18,7 @@ if __name__ == "__main__":
         "HumidSensor": sensors.HumidSensor,
         "RollerShade": sensors.RollerShade,
         "GarageDoor": sensors.GarageDoor,
+        "SolarPanelSensor": sensors.SolarPanelSensor,
     }
 
     parser = argparse.ArgumentParser(description="Process input...")

@@ -66,15 +66,24 @@ if __name__ == "__main__":
     file = os.path.join(os.getcwd(), r"Sensors\sensor.py")
     process_env = os.environ.copy()
 
-    # create_subprocess(sensor_scripts.GasValveSensor.__name__)
+    create_subprocess(sensor_scripts.GasValveSensor.__name__)
+    create_subprocess(sensor_scripts.GasDetector.__name__)
+
+    create_subprocess(sensor_scripts.SolarPanelSensor.__name__)
+
+    create_subprocess(sensor_scripts.TemperatureSensor.__name__)
+    create_subprocess(sensor_scripts.HumidSensor.__name__)
+
+
     # create_subprocess(sensor_scripts.SmartPlug.__name__)
     # create_subprocess(sensor_scripts.Lock.__name__)
     # create_subprocess(sensor_scripts.GasDetector.__name__)
+    # create_subprocess(sensor_scripts.SolarPanelSensor.__name__)
     # create_subprocess(sensor_scripts.Light.__name__)
     # create_subprocess(sensor_scripts.TemperatureSensor.__name__)
     # create_subprocess(sensor_scripts.HumidSensor.__name__)
     # create_subprocess(sensor_scripts.RollerShade.__name__)
-    create_subprocess(sensor_scripts.GarageDoor.__name__)
+    # create_subprocess(sensor_scripts.GarageDoor.__name__)
 
     while True:
         pass

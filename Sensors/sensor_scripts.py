@@ -230,7 +230,7 @@ class GasDetector(Sensor):
 
     def _get_random_data(self) -> str:
         data = dict()
-        self.is_gas_detected = bool(randint(1, 100) > 2)
+        self.is_gas_detected = bool(randint(1, 100) > 90)
         data["gas_detected"] = self.is_gas_detected
         data["gas_density"] = 0
         if self.is_gas_detected:
@@ -515,7 +515,7 @@ class SolarPanelSensor(Sensor):
         # returns random value of power emission
         # returns whether it is turned on/off
         data = dict()
-        data["temperature"] = randint(0, 50)
+        data["temperature"] = randint(10, 25)
         data["watts"] = randint(250, 400)
         data["turn_on"] = self.is_turn_on
         return json.dumps(data)
