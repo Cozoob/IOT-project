@@ -18,7 +18,6 @@ class Sensor(ABC):
         self.broker = broker
         self.client = self.__connect_mqtt()
 
-
     def __connect_mqtt(self) -> mqtt_client:
         def on_connect(client_id: mqtt_client, userdata, flags, rc: int):
             if rc == 0:
@@ -465,4 +464,58 @@ class GarageDoor(Sensor):
     def _get_random_data(self) -> str:
         data = dict()
         data["open"] = self.is_open
+        return json.dumps(data)
+
+
+class SolarPanelSensor(Sensor):
+    is_turn_on = True
+
+    def __init__(self, broker: str, port: int, sender_topic: str, client_id: str):
+        super().__init__(broker, port, sender_topic, client_id)
+
+    def publish(self, data: str):
+        self.subscribe(self.client)
+        self.client.loop_start()
+        while True:
+            random_data = self._get_random_data()
+            result = self.client.publish(
+                self.sender_topic, random_data
+            )
+            status = result[0]
+            self._check_status(status)
+            sleep(SLEEP_TIME)
+
+    def subscribe(self, client: mqtt_client):
+        def on_message(client, userdata, msg):
+            # Should receive JSON of format :
+            # {
+            # 'turn_on': True/False,
+            # }
+
+            m = msg.payload.decode("utf-8")
+            m = json.loads(m)
+            print(f"Received `{m}` from `{msg.topic}` topic")
+
+            try:
+                if not m["turn_on"]:
+                    self.is_turn_on = False
+                else:
+                    self.is_turn_on = True
+            except KeyError:
+                # inappropriate data sent
+                pass
+
+        topic = self.sender_topic + "/state"
+        client.subscribe(topic)
+        client.on_message = on_message
+
+    def _get_random_data(self) -> str:
+        # return average temperature on top of panel [celsius scale]
+        # between 0-50
+        # returns random value of power emission
+        # returns whether it is turned on/off
+        data = dict()
+        data["temperature"] = randint(0, 50)
+        data["watts"] = randint(250, 400)
+        data["turn_on"] = self.is_turn_on
         return json.dumps(data)
