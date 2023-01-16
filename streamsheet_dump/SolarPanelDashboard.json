@@ -1,0 +1,3139 @@
+{
+  "version": 2,
+  "machines": [
+    {
+      "machine": {
+        "id": "ryC4rdxjs",
+        "name": "SolarPanelDashboard",
+        "state": "stopped",
+        "metadata": {
+          "owner": "anon",
+          "lastModified": 1673723731831,
+          "lastModifiedBy": "unknown",
+          "fileVersion": "2.0.0"
+        },
+        "streamsheets": [
+          {
+            "id": "ByzA4ruxos",
+            "name": "S1",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "MessageBox",
+              "id": "HkQ04SOeis",
+              "stream": {
+                "id": "rkeHM1_lii",
+                "name": "SolarPanel"
+              }
+            },
+            "sheet": {
+              "cells": {
+                "A2": {
+                  "value": "SolarPanel Dashboard",
+                  "type": "string",
+                  "level": 0
+                },
+                "A4": {
+                  "value": "Incoming MQTT Data",
+                  "type": "string",
+                  "level": 0
+                },
+                "A6": {
+                  "formula": "READ(INBOXDATA(,,\"watts\"),B6,\"Number\",,TRUE)",
+                  "value": "watts",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B6": {
+                  "value": 277,
+                  "type": "number",
+                  "level": 0
+                },
+                "C6": {
+                  "value": "kW",
+                  "type": "string",
+                  "level": 0
+                },
+                "A7": {
+                  "value": "Average last 60 secs",
+                  "type": "string",
+                  "level": 0
+                },
+                "B7": {
+                  "formula": "TIMEAGGREGATE(B6,60,1)",
+                  "value": 320.15966386554624,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "C7": {
+                  "value": "kW",
+                  "type": "string",
+                  "level": 0
+                },
+                "A8": {
+                  "formula": "READ(INBOXDATA(,,\"temperature\"),B8,\"Number\",,TRUE)",
+                  "value": "temperature",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B8": {
+                  "value": 22,
+                  "type": "number",
+                  "level": 0
+                },
+                "C8": {
+                  "value": "C",
+                  "type": "string",
+                  "level": 0
+                },
+                "A9": {
+                  "value": "Average last 1 H",
+                  "type": "string",
+                  "level": 0
+                },
+                "B9": {
+                  "formula": "TIMEAGGREGATE(B8,3600,1)",
+                  "value": 17.277310924369747,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "C9": {
+                  "value": "C",
+                  "type": "string",
+                  "level": 0
+                },
+                "A11": {
+                  "formula": "READ(INBOXMETADATA(,,\"arrivalTime\"),B11,\"Number\",,TRUE)",
+                  "value": "arrivalTime",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B11": {
+                  "value": 44940.80244310186,
+                  "type": "number",
+                  "level": 0
+                },
+                "A12": {
+                  "value": "Time Interval",
+                  "type": "string",
+                  "level": 1
+                },
+                "B12": {
+                  "formula": "TEXT(B11,\"HH:MM\")&\" to \"&TEXT(B11+1/24/60,\"HH:MM\")",
+                  "value": "19:15 to 19:16",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A15": {
+                  "value": "Table Update",
+                  "type": "string",
+                  "level": 1
+                },
+                "B15": {
+                  "formula": "TABLE.UPDATE(A16:B26,B6/60,B12,\"Energy Production\",-1,0,0)",
+                  "value": true,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A16": {
+                  "value": "Interval",
+                  "type": "string",
+                  "level": 1
+                },
+                "B16": {
+                  "value": "Energy Production",
+                  "type": "string",
+                  "level": 0
+                },
+                "C16": {
+                  "value": "Unit",
+                  "type": "string",
+                  "level": 0
+                },
+                "A17": {
+                  "value": "19:15 to 19:16",
+                  "type": "string",
+                  "level": 0
+                },
+                "B17": {
+                  "value": 4.616666666666666,
+                  "type": "number",
+                  "level": 0
+                },
+                "C17": {
+                  "formula": "IF(B17<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A18": {
+                  "value": "19:14 to 19:15",
+                  "type": "string",
+                  "level": 0
+                },
+                "B18": {
+                  "value": 6.316666666666666,
+                  "type": "number",
+                  "level": 0
+                },
+                "C18": {
+                  "formula": "IF(B18<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A19": {
+                  "value": "19:13 to 19:14",
+                  "type": "string",
+                  "level": 0
+                },
+                "B19": {
+                  "value": 4.45,
+                  "type": "number",
+                  "level": 0
+                },
+                "C19": {
+                  "formula": "IF(B19<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A20": {
+                  "value": "19:12 to 19:13",
+                  "type": "string",
+                  "level": 0
+                },
+                "B20": {
+                  "value": 5.316666666666666,
+                  "type": "number",
+                  "level": 0
+                },
+                "C20": {
+                  "formula": "IF(B20<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A21": {
+                  "value": "19:02 to 19:03",
+                  "type": "string",
+                  "level": 2
+                },
+                "B21": {
+                  "value": 5.816666666666666,
+                  "type": "number",
+                  "level": 0
+                },
+                "C21": {
+                  "formula": "IF(B21<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "M21": {
+                  "value": "",
+                  "type": "string",
+                  "level": 0
+                },
+                "A22": {
+                  "value": "19:01 to 19:02",
+                  "type": "string",
+                  "level": 1
+                },
+                "B22": {
+                  "value": 5.3,
+                  "type": "number",
+                  "level": 0
+                },
+                "C22": {
+                  "formula": "IF(B22<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A23": {
+                  "value": "19:00 to 19:01",
+                  "type": "string",
+                  "level": 2
+                },
+                "B23": {
+                  "value": 4.883333333333334,
+                  "type": "number",
+                  "level": 0
+                },
+                "C23": {
+                  "formula": "IF(B23<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A24": {
+                  "value": "18:59 to 19:00",
+                  "type": "string",
+                  "level": 3
+                },
+                "B24": {
+                  "value": 6.1,
+                  "type": "number",
+                  "level": 0
+                },
+                "C24": {
+                  "formula": "IF(B24<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A25": {
+                  "value": "18:58 to 18:59",
+                  "type": "string",
+                  "level": 4
+                },
+                "B25": {
+                  "value": 5.95,
+                  "type": "number",
+                  "level": 0
+                },
+                "C25": {
+                  "formula": "IF(B25<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A26": {
+                  "value": "18:57 to 18:58",
+                  "type": "string",
+                  "level": 4
+                },
+                "B26": {
+                  "value": 6.016666666666667,
+                  "type": "number",
+                  "level": 0
+                },
+                "C26": {
+                  "formula": "IF(B26<>0,\"kWh\",\"\")",
+                  "value": "kWh",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A27": {
+                  "value": "Total 10 Minutes",
+                  "type": "string",
+                  "level": 1
+                },
+                "B27": {
+                  "formula": "SUM(B17:B26)",
+                  "value": 54.76666666666667,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "C27": {
+                  "value": "kWh",
+                  "type": "string",
+                  "level": 0
+                }
+              },
+              "namedCells": {},
+              "shapes": {
+                "shapes": [
+                  {
+                    "id": 11746726117,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "21080.187499999993"
+                    },
+                    "y": {
+                      "v": "8665.375000000282"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "7738.979166666664"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "4470.625000000271"
+                    },
+                    "width": {
+                      "v": "15477.958333333328"
+                    },
+                    "height": {
+                      "v": "8941.250000000542"
+                    },
+                    "parent": 1028,
+                    "name": {
+                      "v": "Streamchart1",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23666666",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "line",
+                        "template": "basic",
+                        "coharent": "0",
+                        "o-formula": {
+                          "v": "",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Solar%20power%20emission",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-format": {
+                          "o-font": {
+                            "size": "11",
+                            "style": "1"
+                          }
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "line",
+                          "timeseries": "1",
+                          "bargap": "0.3",
+                          "o-fxlabel": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-fylabel": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftime": {
+                            "f": "S1!B7",
+                            "v": "0",
+                            "msc": true,
+                            "sv": 320.97478991596637,
+                            "ref": "S1!B7"
+                          },
+                          "o-ftimexkey": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftimeykey": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-formula": {
+                            "v": "",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-datalabel": {
+                            "position": "above",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "position": "1373.7520484682027 8217.870361804278 14795.537114008584 8741.250000000542",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "number": "h:mm:ss",
+                              "local": "time;en",
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "300 1258.5648296117297 1373.7520484682027 8217.870361804278",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "0",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "S1!B6",
+                          "v": "0",
+                          "msc": true,
+                          "sv": 373,
+                          "ref": "S1!B6"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 453616177261,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "18368.20833333333"
+                    },
+                    "y": {
+                      "v": "18892.02083333339"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "5503.25"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "4537.6041666666715"
+                    },
+                    "width": {
+                      "v": "11006.5"
+                    },
+                    "height": {
+                      "v": "9075.208333333343"
+                    },
+                    "parent": 1028,
+                    "name": {
+                      "v": "Streamchart2",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23AAAAAA",
+                        "t": "s"
+                      },
+                      "fillcolor": {
+                        "v": "%23ffffff",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "bar",
+                        "template": "basic",
+                        "coharent": "0",
+                        "o-formula": {
+                          "v": "",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Energy%20Production%20(kWh)",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-format": {
+                          "o-font": {
+                            "size": "11",
+                            "style": "1"
+                          }
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "bar",
+                          "bargap": "0.3",
+                          "a-fxvalues": [
+                            {
+                              "f": "S1!A17%3AA26",
+                              "v": "0",
+                              "index": 0,
+                              "msc": true,
+                              "sv": "S1!A17:A26"
+                            }
+                          ],
+                          "a-fyvalues": [
+                            {
+                              "f": "S1!B17%3AB26",
+                              "v": "0",
+                              "msc": true,
+                              "sv": "S1!B17:B26"
+                            }
+                          ],
+                          "o-fylabel": {
+                            "f": "%23REF!",
+                            "v": "0",
+                            "msc": true,
+                            "sv": "#REF!"
+                          },
+                          "o-formula": {
+                            "v": "",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-datalabel": {
+                            "visible": "1",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "left",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "betweenticks": "1",
+                          "position": "300 1258.5648296117297 2398.7702590122117 7581.458312306148",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "2398.7702590122117 7581.458312306148 10469.623975765899 8104.837950502413",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "1",
+                            "o-formula": {
+                              "f": "S1!B16",
+                              "v": "0"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "0",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "",
+                          "v": "Legend",
+                          "t": "s",
+                          "msc": true,
+                          "sv": "Legend"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 130720076216,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "6448.6458333305945"
+                    },
+                    "y": {
+                      "v": "18892.0208333334"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "5781.145833333334"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "4537.604166666668"
+                    },
+                    "width": {
+                      "v": "11562.291666666668"
+                    },
+                    "height": {
+                      "v": "9075.208333333336"
+                    },
+                    "parent": 1028,
+                    "name": {
+                      "v": "Streamchart3",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23AAAAAA",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "pie",
+                        "template": "basic",
+                        "firstseries": "0",
+                        "varybycategories": "1",
+                        "stacked": "1",
+                        "relative": "1",
+                        "hole": "0",
+                        "o-formula": {
+                          "f": "S1!A17%3AB26",
+                          "v": "0",
+                          "msc": true,
+                          "sv": "S1!A17:B26"
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Energy%20Production%20(kWh)",
+                          "t": "s",
+                          "msc": true
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "pie",
+                          "bargap": "0.3",
+                          "a-fxvalues": [
+                            {
+                              "f": "S1!A17%3AA26",
+                              "v": "",
+                              "t": "s",
+                              "index": 0,
+                              "msc": true,
+                              "sv": "S1!A17:A26"
+                            }
+                          ],
+                          "a-fyvalues": [
+                            {
+                              "f": "S1!B17%3AB26",
+                              "v": "",
+                              "t": "s",
+                              "msc": true,
+                              "sv": "S1!B17:B26"
+                            }
+                          ],
+                          "o-formula": {
+                            "f": "",
+                            "v": "",
+                            "t": "s",
+                            "msc": true,
+                            "sv": ""
+                          },
+                          "o-datalabel": {
+                            "position": "outer",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "visible": "0",
+                          "position": "970.4170351668738 8748.70369513707 10629.583333333336 9272.083333333334",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "visible": "0",
+                          "position": "300 1258.5648296117297 970.4170351668738 8748.70369513707",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "1",
+                        "align": "bottom",
+                        "o-formula": {
+                          "f": "",
+                          "v": "Legend",
+                          "t": "s",
+                          "msc": true,
+                          "sv": "Legend"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 220333303373,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "38427.68822894181"
+                    },
+                    "y": {
+                      "v": "8664.625000000562"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "9105.646562277023"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "4471.374999999991"
+                    },
+                    "width": {
+                      "v": "18211.293124554046"
+                    },
+                    "height": {
+                      "v": "8942.749999999982"
+                    },
+                    "parent": 1028,
+                    "name": {
+                      "v": "Streamchart4",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23666666",
+                        "t": "s"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "line",
+                        "template": "basic",
+                        "coharent": "0",
+                        "o-formula": {
+                          "v": "",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Temperature",
+                          "t": "s",
+                          "msc": true
+                        },
+                        "o-format": {
+                          "o-font": {
+                            "size": "11",
+                            "style": "1"
+                          }
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "line",
+                          "timeseries": "1",
+                          "bargap": "0.3",
+                          "o-fxlabel": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-fylabel": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftime": {
+                            "f": "S1!B9",
+                            "v": "0",
+                            "msc": true,
+                            "sv": 17.29050279329609,
+                            "ref": "S1!B9"
+                          },
+                          "o-ftimexkey": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftimeykey": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-formula": {
+                            "v": "",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-datalabel": {
+                            "position": "above",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "position": "1216.9463700792446 8219.370361803718 17528.8719052293 8742.749999999982",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "number": "h:mm:ss",
+                              "local": "time;en",
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "300 1258.5648296117297 1216.9463700792446 8219.370361803718",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "0",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "S1!B6",
+                          "v": "0",
+                          "msc": true,
+                          "sv": 373,
+                          "ref": "S1!B6"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 717777717135
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": 1000,
+                "minrow": 1,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false
+              }
+            },
+            "trigger": {
+              "type": "arrival",
+              "repeat": "once"
+            }
+          }
+        ],
+        "settings": {
+          "view": {
+            "maximize": "ByzA4ruxos",
+            "showInbox": false,
+            "showGrid": false,
+            "showHeader": false,
+            "showOutbox": false,
+            "allowZoom": false,
+            "allowScroll": true
+          },
+          "locale": "en",
+          "isOPCUA": false,
+          "cycletime": 1000,
+          "isCycleRegulated": false
+        },
+        "extensionSettings": {},
+        "className": "Machine",
+        "scope": {
+          "id": "root"
+        },
+        "namedCells": {
+          "|HTTP_Client_Producer": {
+            "value": {
+              "id": "PRODUCER_HTTP",
+              "name": "HTTP_Client_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570837,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Webhook": {
+            "value": {
+              "id": "CONSUMER_WEBHOOK",
+              "name": "Webhook",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570839,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Lock": {
+            "value": {
+              "id": "r1et4WIJis",
+              "name": "Lock",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570848,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Consumer": {
+            "value": {
+              "id": "CONSUMER_MQTT",
+              "name": "MQTT_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570849,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GasDetector": {
+            "value": {
+              "id": "S1eEI-8Jis",
+              "name": "GasDetector",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570850,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|TemperatureSensor": {
+            "value": {
+              "id": "H1e4F-UJoi",
+              "name": "TemperatureSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570851,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Wind_Data": {
+            "value": {
+              "id": "HkZRIJtchH",
+              "name": "Wind_Data",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570852,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GasValveSensor": {
+            "value": {
+              "id": "SyxD4f4yji",
+              "name": "GasValveSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570853,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|RollerShade": {
+            "value": {
+              "id": "S1lCo-IJji",
+              "name": "RollerShade",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570855,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GarageDoor": {
+            "value": {
+              "id": "HJeV6bL1jj",
+              "name": "GarageDoor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570856,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|SmartPlug": {
+            "value": {
+              "id": "S1eWmWLJsi",
+              "name": "SmartPlug",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570856,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Light": {
+            "value": {
+              "id": "H1e1ObUyii",
+              "name": "Light",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570857,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|CatsandDogs": {
+            "value": {
+              "id": "ryxQOI71so",
+              "name": "CatsandDogs",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570858,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|SolarPanelSensor": {
+            "value": {
+              "id": "rkeHM1_lii",
+              "name": "SolarPanelSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570859,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|HumidSensor": {
+            "value": {
+              "id": "SyxPqWU1jj",
+              "name": "HumidSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570861,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Producer": {
+            "value": {
+              "id": "PRODUCER_MQTT",
+              "name": "MQTT_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570861,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|RandomProducer": {
+            "value": {
+              "id": "Bygg8IQkoo",
+              "name": "RandomProducer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570862,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Producer1": {
+            "value": {
+              "id": "Syxa1gQ1oj",
+              "name": "MQTT_Producer1",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570863,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          }
+        }
+      },
+      "graph": {
+        "id": "rJySrOlio",
+        "graphdef": {
+          "version": "3",
+          "uniqueid": "1",
+          "o-outbox": {
+            "split": "5000",
+            "width": "5000"
+          },
+          "a-graphitem": [
+            {
+              "id": "1000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "ByzA4ruxos",
+                  "t": "s"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "11000"
+                  },
+                  "o-y": {
+                    "v": "7000"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "10500"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6500"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "21000"
+                },
+                "o-h": {
+                  "v": "13000"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "5000"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S1",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "1",
+                      "size": "844",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "2",
+                      "size": "4831",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "3",
+                      "size": "4487",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "12",
+                      "size": "4355",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "13",
+                      "size": "2079",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {
+                  "a-r": [
+                    {
+                      "n": "1",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-fontsize": {
+                                "v": "14"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "3",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "4",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "5",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.0",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B1%3Bfalse",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "6",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Bfalse",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "12",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "13",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "8",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Bfalse",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "9",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "%23%2C%23%230.0000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B4%3Btrue",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "10",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "h%3Amm%3Ass",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "time%3Bde",
+                                "t": "s"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "11",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "12",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "13",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "14",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "15",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-halign": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "16",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "2"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "17",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "18",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "2"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "19",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "3"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "20",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "21",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "22",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "23",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "3"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "24",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "25",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "26",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "4",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "31",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "33",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "o-images": {}
+        },
+        "machineId": "ryC4rdxjs"
+      }
+    }
+  ],
+  "streams": []
+}
