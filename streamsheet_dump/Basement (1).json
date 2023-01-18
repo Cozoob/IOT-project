@@ -1,0 +1,3115 @@
+{
+  "version": 2,
+  "machines": [
+    {
+      "machine": {
+        "id": "S15HXtloo",
+        "name": "Basement",
+        "state": "stopped",
+        "metadata": {
+          "owner": "anon",
+          "lastModified": 1673886005311,
+          "lastModifiedBy": "unknown",
+          "fileVersion": "2.0.0"
+        },
+        "streamsheets": [
+          {
+            "id": "HksBmtxsi",
+            "name": "S1",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "MessageBox",
+              "id": "SkejSXYgsi",
+              "stream": {
+                "id": "S1eEI-8Jis",
+                "name": "GasDetector"
+              }
+            },
+            "sheet": {
+              "cells": {
+                "A3": {
+                  "value": "Gas detection:",
+                  "type": "string",
+                  "level": 0
+                },
+                "A8": {
+                  "formula": "READ(INBOXDATA(,,\"gas_density\"),B8,\"Number\",,TRUE)",
+                  "value": "gas_density",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B8": {
+                  "value": 0,
+                  "type": "number",
+                  "level": 0
+                },
+                "A9": {
+                  "value": "Average last 1 H",
+                  "type": "string",
+                  "level": 0
+                },
+                "B9": {
+                  "formula": "TIMEAGGREGATE(B8,3600,1)",
+                  "value": 1.3818181818181818,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A10": {
+                  "formula": "READ(INBOXMETADATA(,,\"arrivalTime\"),B10,\"Number\",,TRUE)",
+                  "value": "arrivalTime",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B10": {
+                  "value": 44942.666610370376,
+                  "type": "number",
+                  "level": 0
+                },
+                "A11": {
+                  "value": "Time Interval",
+                  "type": "string",
+                  "level": 1
+                },
+                "B11": {
+                  "formula": "TEXT(B10,\"HH:MM\")&\" to \"&TEXT(B10+1/24/60,\"HH:MM\")",
+                  "value": "15:59 to 16:00",
+                  "type": "undefined",
+                  "level": 0
+                }
+              },
+              "namedCells": {},
+              "shapes": {
+                "shapes": [],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 661735606623
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": 1000,
+                "minrow": 1,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false
+              }
+            },
+            "trigger": {
+              "type": "arrival",
+              "repeat": "once"
+            }
+          },
+          {
+            "id": "rkEt5Ntxos",
+            "name": "S2",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "MessageBox",
+              "id": "HJBFcVKesi",
+              "stream": {
+                "id": "SyxD4f4yji",
+                "name": "GasValveSensor"
+              }
+            },
+            "sheet": {
+              "cells": {
+                "A3": {
+                  "value": "Gas valve:",
+                  "type": "string",
+                  "level": 0
+                },
+                "E5": {
+                  "value": "Table Update",
+                  "type": "string",
+                  "level": 1
+                },
+                "F5": {
+                  "formula": "TABLE.UPDATE(S2!E6:F16,S2!B8,S2!B11,\"Gas\",-1,0,0)",
+                  "value": true,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "E6": {
+                  "value": "Interval",
+                  "type": "string",
+                  "level": 1
+                },
+                "F6": {
+                  "value": "Gas",
+                  "type": "string",
+                  "level": 0
+                },
+                "E7": {
+                  "value": "15:59 to 16:00",
+                  "type": "string",
+                  "level": 0
+                },
+                "F7": {
+                  "value": 392,
+                  "type": "number",
+                  "level": 0
+                },
+                "A8": {
+                  "formula": "READ(INBOXDATA(,,\"gas_value\"),B8,\"Number\",,TRUE)",
+                  "value": "gas_value",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B8": {
+                  "value": 383,
+                  "type": "number",
+                  "level": 0
+                },
+                "E8": {
+                  "value": "23:25 to 23:26",
+                  "type": "string",
+                  "level": 0
+                },
+                "F8": {
+                  "value": 0,
+                  "type": "number",
+                  "level": 0
+                },
+                "A9": {
+                  "value": "Average last 1 H",
+                  "type": "string",
+                  "level": 0
+                },
+                "B9": {
+                  "formula": "TIMEAGGREGATE(B8,3600,1)",
+                  "value": 362.27272727272725,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "E9": {
+                  "value": "23:24 to 23:25",
+                  "type": "string",
+                  "level": 0
+                },
+                "F9": {
+                  "value": 347,
+                  "type": "number",
+                  "level": 0
+                },
+                "A10": {
+                  "formula": "READ(INBOXMETADATA(,,\"arrivalTime\"),B10,\"Number\",,TRUE)",
+                  "value": "arrivalTime",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B10": {
+                  "value": 44942.666610925924,
+                  "type": "number",
+                  "level": 0
+                },
+                "E10": {
+                  "value": "20:00 to 20:01",
+                  "type": "string",
+                  "level": 0
+                },
+                "F10": {
+                  "value": 0,
+                  "type": "number",
+                  "level": 0
+                },
+                "A11": {
+                  "value": "Time Interval",
+                  "type": "string",
+                  "level": 1
+                },
+                "B11": {
+                  "formula": "TEXT(B10,\"HH:MM\")&\" to \"&TEXT(B10+1/24/60,\"HH:MM\")",
+                  "value": "15:59 to 16:00",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "E11": {
+                  "value": "19:59 to 20:00",
+                  "type": "string",
+                  "level": 0
+                },
+                "F11": {
+                  "value": 0,
+                  "type": "number",
+                  "level": 0
+                },
+                "A12": {
+                  "formula": "READ(INBOXDATA(,,\"open\"),B12,\"Bool\",,TRUE)",
+                  "value": "open",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "B12": {
+                  "value": true,
+                  "type": "bool",
+                  "level": 0
+                },
+                "E12": {
+                  "value": "19:58 to 19:59",
+                  "type": "string",
+                  "level": 0
+                },
+                "F12": {
+                  "value": 395,
+                  "type": "number",
+                  "level": 0
+                },
+                "E13": {
+                  "value": "19:57 to 19:58",
+                  "type": "string",
+                  "level": 0
+                },
+                "F13": {
+                  "value": 307,
+                  "type": "number",
+                  "level": 0
+                },
+                "E14": {
+                  "value": "19:56 to 19:57",
+                  "type": "string",
+                  "level": 0
+                },
+                "F14": {
+                  "value": 379,
+                  "type": "number",
+                  "level": 0
+                },
+                "E15": {
+                  "value": "19:55 to 19:56",
+                  "type": "string",
+                  "level": 2
+                },
+                "F15": {
+                  "value": 383,
+                  "type": "number",
+                  "level": 0
+                },
+                "E16": {
+                  "value": "19:54 to 19:55",
+                  "type": "string",
+                  "level": 1
+                },
+                "F16": {
+                  "value": 367,
+                  "type": "number",
+                  "level": 0
+                },
+                "A17": {
+                  "value": "Publisher properties:",
+                  "type": "string",
+                  "level": 0
+                },
+                "E17": {
+                  "value": "AVG of 10 Minutes",
+                  "type": "string",
+                  "level": 1
+                },
+                "F17": {
+                  "formula": "AVERAGE(F7:F16)",
+                  "value": 257,
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A19": {
+                  "value": "Button name:",
+                  "type": "string",
+                  "level": 0
+                },
+                "B19": {
+                  "formula": "IF(S2!B12=TRUE,\"Stop\",\"Start\")",
+                  "value": "Stop",
+                  "type": "undefined",
+                  "level": 0
+                },
+                "A20": {
+                  "value": "Button value:",
+                  "type": "string",
+                  "level": 0
+                },
+                "B20": {
+                  "value": false,
+                  "type": "bool",
+                  "level": 0
+                },
+                "A21": {
+                  "value": "Publisher:",
+                  "type": "string",
+                  "level": 0
+                },
+                "B21": {
+                  "formula": "IF(S2!B20,MQTT.PUBLISH(|RandomProducer,JSON(S2!A22:B22),\"sensor-0/state\"),\"MQTT Publisher\")",
+                  "value": "MQTT Publisher",
+                  "type": "undefined",
+                  "level": 0,
+                  "references": [
+                    "|RandomProducer"
+                  ]
+                },
+                "A22": {
+                  "value": "open",
+                  "type": "string",
+                  "level": 0
+                },
+                "B22": {
+                  "formula": "NOT(S2!B12)",
+                  "value": false,
+                  "type": "undefined",
+                  "level": 0
+                }
+              },
+              "namedCells": {},
+              "shapes": {
+                "shapes": [],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 676626383238
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": 1000,
+                "minrow": 1,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false
+              }
+            },
+            "trigger": {
+              "type": "arrival",
+              "repeat": "once"
+            }
+          },
+          {
+            "id": "SkMvSBYgos",
+            "name": "S3",
+            "loop": {
+              "path": "",
+              "enabled": false,
+              "recursively": false
+            },
+            "inbox": {
+              "max": 20,
+              "type": "MessageBox",
+              "id": "ry7PBrtxoj",
+              "stream": {
+                "id": "S1eEI-8Jis",
+                "name": "GasDetector"
+              }
+            },
+            "sheet": {
+              "cells": {},
+              "namedCells": {},
+              "shapes": {
+                "shapes": [
+                  {
+                    "id": 166277672752,
+                    "itemType": "layoutnode",
+                    "x": {
+                      "v": "0"
+                    },
+                    "y": {
+                      "v": "0"
+                    },
+                    "localX": {
+                      "v": "0"
+                    },
+                    "localY": {
+                      "v": "0"
+                    },
+                    "width": {
+                      "v": "48933.33479121883"
+                    },
+                    "height": {
+                      "v": "12400"
+                    },
+                    "parent": 3028,
+                    "name": {
+                      "v": "Rectangle17",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      }
+                    },
+                    "attributes": {
+                      "selectionmode": {
+                        "v": "2"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      },
+                      "rotatable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "clipchildren": {
+                        "v": "true",
+                        "t": "b"
+                      },
+                      "moveable": {
+                        "v": "0"
+                      },
+                      "deleteable": {
+                        "v": "false",
+                        "t": "b"
+                      }
+                    },
+                    "modelattributes": {
+                      "layoutmode": {
+                        "v": "resize",
+                        "t": "s"
+                      },
+                      "minwidth": {
+                        "v": "10000"
+                      },
+                      "maxwidth": {
+                        "v": "100000"
+                      }
+                    },
+                    "layout": {
+                      "rows": 2,
+                      "columns": 2,
+                      "rowData": [
+                        {
+                          "size": 1000,
+                          "minSize": 1000,
+                          "sizeMode": "auto",
+                          "expanded": true,
+                          "expandable": false
+                        },
+                        {
+                          "size": 1000,
+                          "minSize": 1000,
+                          "sizeMode": "auto",
+                          "expanded": true,
+                          "expandable": false
+                        }
+                      ],
+                      "columnData": [
+                        {
+                          "size": 50,
+                          "minSize": 1000,
+                          "sizeMode": "relative",
+                          "expanded": true,
+                          "expandable": false
+                        },
+                        {
+                          "size": 50,
+                          "minSize": 1000,
+                          "sizeMode": "relative",
+                          "expanded": true,
+                          "expandable": false
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": 774278282688,
+                    "itemType": "layoutcell",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "3500"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12233.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3500"
+                    },
+                    "width": {
+                      "v": "24466.667395609416"
+                    },
+                    "height": {
+                      "v": "7000"
+                    },
+                    "parent": 166277672752,
+                    "name": {
+                      "v": "Rectangle18",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "attributes": {
+                      "rotatable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "moveable": {
+                        "v": "0"
+                      },
+                      "sizeable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "deleteable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "selectionmode": {
+                        "v": "2"
+                      }
+                    },
+                    "layout": {
+                      "columnData": []
+                    }
+                  },
+                  {
+                    "id": 712786366232,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "3500"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12033.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3300"
+                    },
+                    "width": {
+                      "v": "24066.667395609416"
+                    },
+                    "height": {
+                      "v": "6600"
+                    },
+                    "parent": 774278282688,
+                    "name": {
+                      "v": "Streamchart2",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23000000",
+                        "t": "s"
+                      },
+                      "linecorner": {
+                        "v": "75"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "column",
+                        "template": "basic",
+                        "o-formula": {
+                          "f": "S2!E7%3AF16",
+                          "v": "0",
+                          "msc": true,
+                          "sv": "S2!E7:F16"
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Gas%20value%20intervals",
+                          "t": "s",
+                          "msc": true
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "column",
+                          "bargap": "0.3",
+                          "a-fxvalues": [
+                            {
+                              "f": "S2!E8%3AE16",
+                              "v": "",
+                              "t": "s",
+                              "index": 0,
+                              "msc": true,
+                              "sv": "S2!E8:E16"
+                            }
+                          ],
+                          "a-fyvalues": [
+                            {
+                              "f": "S2!F8%3AF16",
+                              "v": "",
+                              "t": "s",
+                              "msc": true,
+                              "sv": "S2!F8:F16"
+                            }
+                          ],
+                          "o-fylabel": {
+                            "f": "S2!F7",
+                            "v": "0",
+                            "msc": true,
+                            "sv": 328,
+                            "ref": "S2!F7"
+                          },
+                          "o-formula": {
+                            "f": "",
+                            "v": "",
+                            "t": "s",
+                            "msc": true,
+                            "sv": ""
+                          },
+                          "o-datalabel": {
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "betweenticks": "1",
+                          "position": "1530.5577268571606 5876.620361803735 22209.861717220458 6400",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "300 1258.5648296117297 1530.5577268571606 5876.620361803735",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "1",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "",
+                          "v": "Legend",
+                          "t": "s",
+                          "msc": true,
+                          "sv": "Legend"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 771176776877,
+                    "itemType": "layoutcell",
+                    "x": {
+                      "v": "36700.001093414125"
+                    },
+                    "y": {
+                      "v": "3500"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12233.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3500"
+                    },
+                    "width": {
+                      "v": "24466.667395609416"
+                    },
+                    "height": {
+                      "v": "7000"
+                    },
+                    "parent": 166277672752,
+                    "name": {
+                      "v": "Rectangle19",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "attributes": {
+                      "rotatable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "moveable": {
+                        "v": "0"
+                      },
+                      "sizeable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "deleteable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "selectionmode": {
+                        "v": "2"
+                      }
+                    },
+                    "layout": {
+                      "columnData": []
+                    }
+                  },
+                  {
+                    "id": 75612016011,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "3500"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12033.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "3300"
+                    },
+                    "width": {
+                      "v": "24066.667395609416"
+                    },
+                    "height": {
+                      "v": "6600"
+                    },
+                    "parent": 771176776877,
+                    "name": {
+                      "v": "Streamchart1",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23000000",
+                        "t": "s"
+                      },
+                      "linecorner": {
+                        "v": "75"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "line",
+                        "template": "basic",
+                        "o-formula": {
+                          "f": "S1!B9",
+                          "v": "0",
+                          "msc": true,
+                          "sv": 1.3818181818181818,
+                          "ref": "S1!B9"
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Gas%20leaks",
+                          "t": "s",
+                          "msc": true
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "line",
+                          "timeseries": "1",
+                          "bargap": "0.3",
+                          "a-fxvalues": [
+                            {
+                              "f": "S2!E8%3AE16",
+                              "v": "",
+                              "t": "s",
+                              "index": 0,
+                              "msc": true,
+                              "sv": "S2!E8:E16"
+                            }
+                          ],
+                          "a-fyvalues": [
+                            {
+                              "f": "S2!F8%3AF16",
+                              "v": "",
+                              "t": "s",
+                              "msc": true,
+                              "sv": "S2!F8:F16"
+                            }
+                          ],
+                          "o-fxlabel": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-fylabel": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftime": {
+                            "f": "S1!B9",
+                            "v": "0",
+                            "msc": true,
+                            "sv": 1.3818181818181818,
+                            "ref": "S1!B9"
+                          },
+                          "o-ftimexkey": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftimeykey": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-formula": {
+                            "f": "",
+                            "v": "",
+                            "t": "s",
+                            "msc": true,
+                            "sv": ""
+                          },
+                          "o-datalabel": {
+                            "position": "above",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "position": "1399.30725537337 5876.620361803735 21706.685770618096 6400",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "0"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "482.3608852941254 1258.5648296117297 1399.30725537337 5876.620361803735",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "1",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "",
+                          "v": "Legend",
+                          "t": "s",
+                          "msc": true,
+                          "sv": "Legend"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 242878248878,
+                    "itemType": "layoutcell",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "9700"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12233.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "2700"
+                    },
+                    "width": {
+                      "v": "24466.667395609416"
+                    },
+                    "height": {
+                      "v": "5400"
+                    },
+                    "parent": 166277672752,
+                    "name": {
+                      "v": "Rectangle20",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "attributes": {
+                      "rotatable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "moveable": {
+                        "v": "0"
+                      },
+                      "sizeable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "deleteable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "selectionmode": {
+                        "v": "2"
+                      }
+                    },
+                    "layout": {
+                      "columnData": []
+                    }
+                  },
+                  {
+                    "id": 677667776132,
+                    "itemType": "streamchart",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "2700"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12033.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "2500"
+                    },
+                    "width": {
+                      "v": "24066.667395609416"
+                    },
+                    "height": {
+                      "v": "5000"
+                    },
+                    "parent": 242878248878,
+                    "name": {
+                      "v": "Streamchart3",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecolor": {
+                        "v": "%23000000",
+                        "t": "s"
+                      },
+                      "linecorner": {
+                        "v": "75"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "portmode": {
+                        "v": "0"
+                      }
+                    },
+                    "chart": {
+                      "o-chart": {
+                        "type": "line",
+                        "template": "basic",
+                        "o-formula": {
+                          "f": "S2!B9",
+                          "v": "0",
+                          "msc": true,
+                          "sv": 361.8888888888889,
+                          "ref": "S2!B9"
+                        },
+                        "o-hilolines": {
+                          "visible": "0"
+                        },
+                        "o-serieslines": {
+                          "visible": "0"
+                        },
+                        "o-upbars": {
+                          "visible": "0"
+                        },
+                        "o-downbars": {
+                          "visible": "0"
+                        }
+                      },
+                      "o-plot": {},
+                      "o-title": {
+                        "align": "center",
+                        "visible": "1",
+                        "o-formula": {
+                          "v": "Gas%20value%20over%20time",
+                          "t": "s",
+                          "msc": true
+                        }
+                      },
+                      "a-series": [
+                        {
+                          "type": "line",
+                          "timeseries": "1",
+                          "bargap": "0.3",
+                          "o-fxlabel": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-fylabel": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftime": {
+                            "f": "S2!B9",
+                            "v": "0",
+                            "msc": true,
+                            "sv": 361.8888888888889,
+                            "ref": "S2!B9"
+                          },
+                          "o-ftimexkey": {
+                            "v": "time",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-ftimeykey": {
+                            "v": "value",
+                            "t": "s",
+                            "msc": true
+                          },
+                          "o-formula": {
+                            "f": "",
+                            "v": "",
+                            "t": "s",
+                            "msc": true,
+                            "sv": ""
+                          },
+                          "o-datalabel": {
+                            "position": "above",
+                            "o-format": {
+                              "o-font": {
+                                "linknumberformat": "1"
+                              }
+                            }
+                          }
+                        }
+                      ],
+                      "a-xaxis": [
+                        {
+                          "align": "bottom",
+                          "type": "category",
+                          "name": "XAxis1",
+                          "position": "1399.30725537337 4276.620361803735 21706.685770618096 4800",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "0"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "a-yaxis": [
+                        {
+                          "align": "left",
+                          "type": "linear",
+                          "name": "YAxis1",
+                          "position": "325.5552069051673 1258.5648296117297 1399.30725537337 4276.620361803735",
+                          "o-formula": {
+                            "f": "AXIS()",
+                            "v": "0",
+                            "msc": true,
+                            "sv": true
+                          },
+                          "o-format": {
+                            "o-font": {
+                              "linknumberformat": "1"
+                            }
+                          },
+                          "o-axistitle": {
+                            "align": "center",
+                            "visible": "0",
+                            "o-formula": {
+                              "f": "",
+                              "v": "Title",
+                              "t": "s"
+                            }
+                          }
+                        }
+                      ],
+                      "o-legend": {
+                        "visible": "1",
+                        "align": "middleright",
+                        "o-formula": {
+                          "f": "",
+                          "v": "Legend",
+                          "t": "s",
+                          "msc": true,
+                          "sv": "Legend"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": 443123833776,
+                    "itemType": "layoutcell",
+                    "x": {
+                      "v": "36700.001093414125"
+                    },
+                    "y": {
+                      "v": "9700"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12233.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "2700"
+                    },
+                    "width": {
+                      "v": "24466.667395609416"
+                    },
+                    "height": {
+                      "v": "5400"
+                    },
+                    "parent": 166277672752,
+                    "name": {
+                      "v": "Rectangle21",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linestyle": {
+                        "v": "0"
+                      },
+                      "fillstyle": {
+                        "v": "0"
+                      }
+                    },
+                    "attributes": {
+                      "rotatable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "moveable": {
+                        "v": "0"
+                      },
+                      "sizeable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "deleteable": {
+                        "v": "false",
+                        "t": "b"
+                      },
+                      "selectionmode": {
+                        "v": "2"
+                      }
+                    },
+                    "layout": {
+                      "columnData": []
+                    }
+                  },
+                  {
+                    "id": 787287779687,
+                    "itemType": "sheetbuttonnode",
+                    "x": {
+                      "v": "12233.333697804708"
+                    },
+                    "y": {
+                      "v": "700"
+                    },
+                    "localX": {
+                      "f": "WIDTH*0.5",
+                      "v": "12033.333697804708"
+                    },
+                    "localY": {
+                      "f": "HEIGHT*0.5",
+                      "v": "500"
+                    },
+                    "width": {
+                      "v": "24066.667395609416"
+                    },
+                    "height": {
+                      "v": "1000"
+                    },
+                    "parent": 443123833776,
+                    "name": {
+                      "v": "Button1",
+                      "t": "s"
+                    },
+                    "shape": {
+                      "type": "rectangle"
+                    },
+                    "format": {
+                      "linecorner": {
+                        "v": "150"
+                      }
+                    },
+                    "textformat": {
+                      "fontsize": {
+                        "v": "9"
+                      }
+                    },
+                    "attributes": {
+                      "container": {
+                        "v": "false",
+                        "t": "b"
+                      }
+                    },
+                    "modelattributes": {
+                      "title": {
+                        "f": "S2!B19",
+                        "v": "Start",
+                        "t": "s",
+                        "msc": true,
+                        "sv": "Stop",
+                        "ref": "S2!B19"
+                      },
+                      "value": {
+                        "f": "S2!B20",
+                        "v": "true",
+                        "t": "b",
+                        "msc": true,
+                        "sv": false,
+                        "ref": "S2!B20"
+                      }
+                    }
+                  }
+                ],
+                "timestamp": 0,
+                "version": 1,
+                "changed": 361218351772
+              },
+              "properties": {
+                "cols": [],
+                "rows": [],
+                "cells": []
+              },
+              "settings": {
+                "maxchars": 1000,
+                "minrow": 1,
+                "maxrow": 100,
+                "mincol": -2,
+                "maxcol": 50,
+                "protected": false
+              }
+            },
+            "trigger": {
+              "type": "arrival",
+              "repeat": "once"
+            }
+          }
+        ],
+        "settings": {
+          "view": {
+            "maximize": "HksBmtxsi",
+            "showInbox": false,
+            "showGrid": false,
+            "showHeader": false,
+            "showOutbox": false,
+            "allowZoom": false,
+            "allowScroll": true
+          },
+          "locale": "en",
+          "isOPCUA": false,
+          "cycletime": 1000,
+          "isCycleRegulated": false
+        },
+        "extensionSettings": {},
+        "className": "Machine",
+        "scope": {
+          "id": "root"
+        },
+        "namedCells": {
+          "|HTTP_Client_Producer": {
+            "value": {
+              "id": "PRODUCER_HTTP",
+              "name": "HTTP_Client_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570837,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Webhook": {
+            "value": {
+              "id": "CONSUMER_WEBHOOK",
+              "name": "Webhook",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570839,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Lock": {
+            "value": {
+              "id": "r1et4WIJis",
+              "name": "Lock",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570848,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Consumer": {
+            "value": {
+              "id": "CONSUMER_MQTT",
+              "name": "MQTT_Consumer",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570849,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GasDetector": {
+            "value": {
+              "id": "S1eEI-8Jis",
+              "name": "GasDetector",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570850,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|TemperatureSensor": {
+            "value": {
+              "id": "H1e4F-UJoi",
+              "name": "TemperatureSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570851,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Wind_Data": {
+            "value": {
+              "id": "HkZRIJtchH",
+              "name": "Wind_Data",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570852,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GasValveSensor": {
+            "value": {
+              "id": "SyxD4f4yji",
+              "name": "GasValveSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570853,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|RollerShade": {
+            "value": {
+              "id": "S1lCo-IJji",
+              "name": "RollerShade",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570855,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|GarageDoor": {
+            "value": {
+              "id": "HJeV6bL1jj",
+              "name": "GarageDoor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570856,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|SmartPlug": {
+            "value": {
+              "id": "S1eWmWLJsi",
+              "name": "SmartPlug",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570856,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|Light": {
+            "value": {
+              "id": "H1e1ObUyii",
+              "name": "Light",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570857,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|CatsandDogs": {
+            "value": {
+              "id": "ryxQOI71so",
+              "name": "CatsandDogs",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570858,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|SolarPanelSensor": {
+            "value": {
+              "id": "rkeHM1_lii",
+              "name": "SolarPanelSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570859,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|HumidSensor": {
+            "value": {
+              "id": "SyxPqWU1jj",
+              "name": "HumidSensor",
+              "type": "stream",
+              "state": "connected",
+              "timestamp": 1673884570861,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Producer": {
+            "value": {
+              "id": "PRODUCER_MQTT",
+              "name": "MQTT_Producer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570861,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|RandomProducer": {
+            "value": {
+              "id": "Bygg8IQkoo",
+              "name": "RandomProducer",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570862,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          },
+          "|MQTT_Producer1": {
+            "value": {
+              "id": "Syxa1gQ1oj",
+              "name": "MQTT_Producer1",
+              "type": "producer",
+              "state": "connected",
+              "timestamp": 1673884570863,
+              "scope": {
+                "id": "root"
+              }
+            },
+            "type": "object",
+            "info": {
+              "rawtype": "object"
+            },
+            "level": 0
+          }
+        }
+      },
+      "graph": {
+        "id": "r16SQtlii",
+        "graphdef": {
+          "version": "3",
+          "uniqueid": "1",
+          "o-outbox": {
+            "split": "5000",
+            "width": "5000"
+          },
+          "a-graphitem": [
+            {
+              "id": "1000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "HksBmtxsi",
+                  "t": "s"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "41150"
+                  },
+                  "o-y": {
+                    "v": "6776"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "13384"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6277"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "26767"
+                },
+                "o-h": {
+                  "v": "12553"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "5000"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S1",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above"
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "2",
+                      "size": "3402",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "3",
+                      "size": "3270",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {
+                  "a-r": [
+                    {
+                      "n": "2",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "24"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "8",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Bfalse",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "10",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "id": "3000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "SkMvSBYgos",
+                  "t": "s"
+                },
+                "o-step": {
+                  "v": "1",
+                  "t": "s"
+                },
+                "o-sheettype": {
+                  "v": "dashboard",
+                  "t": "s"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "27517"
+                  },
+                  "o-y": {
+                    "v": "19579"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "27017"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6527"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "54033"
+                },
+                "o-h": {
+                  "v": "13053"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "5000"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S3",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above"
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {}
+              }
+            },
+            {
+              "id": "2000",
+              "visible": "1",
+              "o-attributes": {
+                "o-sheetid": {
+                  "v": "rkEt5Ntxos",
+                  "t": "s"
+                },
+                "o-step": {
+                  "v": "1",
+                  "t": "s"
+                }
+              },
+              "o-pin": {
+                "o-p": {
+                  "o-x": {
+                    "v": "13883"
+                  },
+                  "o-y": {
+                    "v": "6776"
+                  }
+                },
+                "o-lp": {
+                  "o-x": {
+                    "f": "!WIDTH*0.5",
+                    "v": "13384"
+                  },
+                  "o-y": {
+                    "f": "!HEIGHT*0.5",
+                    "v": "6277"
+                  }
+                }
+              },
+              "o-size": {
+                "o-w": {
+                  "v": "26767"
+                },
+                "o-h": {
+                  "v": "12553"
+                }
+              },
+              "o-inbox": {
+                "split": "5000",
+                "width": "5000"
+              },
+              "o-processsheet": {
+                "o-attributes": {
+                  "o-calcondemand": {
+                    "v": "true",
+                    "t": "b"
+                  }
+                },
+                "o-name": {
+                  "v": "S2",
+                  "t": "s"
+                },
+                "o-rows": {
+                  "outline": "above"
+                },
+                "o-columns": {
+                  "outline": "above",
+                  "a-section": [
+                    {
+                      "index": "0",
+                      "size": "0",
+                      "visible": "0"
+                    },
+                    {
+                      "index": "1",
+                      "size": "700",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "2",
+                      "size": "3535",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "3",
+                      "size": "3197",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "5",
+                      "size": "1603",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "6",
+                      "size": "4170",
+                      "visible": "1"
+                    },
+                    {
+                      "index": "7",
+                      "size": "2265",
+                      "visible": "1"
+                    }
+                  ]
+                },
+                "o-defaultcell": {
+                  "o-cell": {}
+                },
+                "o-data": {
+                  "a-r": [
+                    {
+                      "n": "2",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "24"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "4",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "5",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-halign": {
+                                "v": "1"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "6",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "2"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "7",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "8",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-numberformat": {
+                                "v": "0.00",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B2%3Bfalse",
+                                "t": "s"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "2"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "9",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "3"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "10",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "11",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "12",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "13",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "3"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "14",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "15",
+                      "a-c": [
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "4"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "16",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "14"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "6",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-fontsize": {
+                                "v": "11"
+                              }
+                            },
+                            "o-a": {
+                              "o-level": {
+                                "v": "1"
+                              },
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "7",
+                          "o-cell": {
+                            "o-t": {
+                              "o-fontsize": {
+                                "v": "11"
+                              },
+                              "o-fontstyle": {
+                                "v": "1"
+                              },
+                              "o-numberformat": {
+                                "v": "0.000",
+                                "t": "s"
+                              },
+                              "o-localculture": {
+                                "v": "number%3B3%3Bfalse",
+                                "t": "s"
+                              }
+                            },
+                            "o-a": {
+                              "o-leftborderstyle": {
+                                "v": "1"
+                              },
+                              "o-topborderstyle": {
+                                "v": "1"
+                              },
+                              "o-rightborderstyle": {
+                                "v": "1"
+                              },
+                              "o-bottomborderstyle": {
+                                "v": "1"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "n": "21",
+                      "a-c": [
+                        {
+                          "n": "2",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "n": "3",
+                          "o-cell": {
+                            "o-a": {
+                              "o-key": {
+                                "v": "true",
+                                "t": "b"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          ],
+          "o-images": {}
+        },
+        "machineId": "S15HXtloo"
+      }
+    }
+  ],
+  "streams": []
+}
