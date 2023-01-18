@@ -12,3 +12,6 @@ venv
 
 # idea files
 .idea
+
+# Project files
+Sensors/__pycache__/
